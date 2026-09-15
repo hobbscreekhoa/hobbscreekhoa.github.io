@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" role="img" aria-label="The Homestead on Hobbs Creek">
+  <title>The Homestead on Hobbs Creek</title>
+  <defs>
+    <linearGradient id="stone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#F7F2E6"/></linearGradient>
+    <linearGradient id="pillar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F2EBDC"/><stop offset="55%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#EDE5D2"/></linearGradient>
+  </defs>
+  <g stroke="#C9BA96" stroke-width="2">
+    <rect x="24" y="130" width="52" height="114" rx="2" fill="url(#pillar)"/>
+    <rect x="16" y="116" width="68" height="17" rx="3" fill="#F5EFE1"/>
+    <rect x="324" y="130" width="52" height="114" rx="2" fill="url(#pillar)"/>
+    <rect x="316" y="116" width="68" height="17" rx="3" fill="#F5EFE1"/>
+  </g>
+  <path d="M68,244 L68,118 Q200,44 332,118 L332,244 Z" fill="url(#stone)" stroke="#C9BA96" stroke-width="2.5" stroke-linejoin="round"/>
+  <rect x="6" y="244" width="388" height="26" rx="3" fill="#F8F3E8" stroke="#C9BA96" stroke-width="2"/>
+  <g fill="#1E3A2F" text-anchor="middle" font-family="Georgia, 'Iowan Old Style', 'Times New Roman', Times, serif" lengthAdjust="spacing">
+    <text x="200" y="120" font-size="19" textLength="46">THE</text>
+    <text x="200" y="168" font-size="31" font-weight="700" textLength="214">HOMESTEAD</text>
+    <text x="200" y="196" font-size="17" textLength="30">ON</text>
+    <text x="200" y="232" font-size="26" font-weight="700" textLength="198">HOBBS CREEK</text>
+  </g>
+</svg>
