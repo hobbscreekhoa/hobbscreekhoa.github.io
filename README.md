@@ -9,16 +9,16 @@ Static one-page site. No build step, no framework, no dependencies.
 
 **Posting new meeting minutes**
 
-1. Open the HOA's **"PUBLIC — Posted on Website"** folder in Google Drive.
-2. Drag the PDF in.
-3. Open the **Meeting Minutes** Google Sheet and add one row: `Date`, `Title`, `Link`.
+Upload them to PayHOA under **Documents → Minutes**, the same as always. Nothing on
+the website needs to change — it links to the portal rather than listing the files.
 
-That's it. The website picks it up automatically. You never edit the website itself.
+Same for financial reports, welcome letters, and anything else homeowners should have.
 
-> ⚠️ Anything placed in that Drive folder becomes **publicly visible on the internet
-> immediately**. Never put member rosters, delinquency lists, violation letters, or
-> anything with residents' personal information in it. Rule of thumb: if you wouldn't
-> staple it to the mailbox kiosk, it doesn't go in the folder.
+**When a homeowner says they cannot find the minutes**
+
+They usually cannot get into the portal. The site invites them to email the board
+about login or sign-up trouble, so expect those emails — send an invitation from
+PayHOA, or help them reset their password.
 
 **Changing the meeting day/time** — that text lives in `index.html`; ask whoever
 maintains the site. It changes rarely enough not to be worth wiring up.
@@ -27,33 +27,25 @@ maintains the site. It changes rarely enough not to be worth wiring up.
 
 ## For whoever maintains the site
 
-### Wiring up the minutes
+### Minutes and other homeowner documents
 
-Edit the `CONFIG` block at the top of the `<script>` in `index.html`:
+They live in PayHOA, behind a homeowner login, so the site cannot list them. Two
+plain links point there instead — one row in **For Residents**, one line under
+**Meetings** — both to `https://app.payhoa.com/auth/login`.
 
-```js
-var CONFIG = {
-  minutesSheetCsv:  '',   // Sheet → File → Share → Publish to web → CSV
-  minutesFolderUrl: ''    // the public Drive folder, used as fallback
-};
-```
+That URL is PayHOA's shared login page; there is no per-association address and no
+usable deep link to the Documents tab (it redirects to the login and loses where you
+were headed). If PayHOA ever gives the HOA its own subdomain, or the board turns on
+PayHOA's public owner page, swap the two links and consider listing documents again.
 
-**"Publish to web" is a different switch from "Share".** A sheet that is only
-link-shared returns **401** on the publish URL. You need File → Share →
-*Publish to web*, not just the Share dialog.
+Both places also tell homeowners without a login to email the board. Do not remove
+that — new buyers and renters hit it constantly, and a bare login link is a dead end
+for them.
 
-Sheet columns must be, in order: **Date | Title | Link**
-
-Behaviour is deliberately fail-safe:
-
-| State | What visitors see |
-|---|---|
-| Sheet configured and reachable | The list of minutes, styled like the rest of the page |
-| Sheet unreachable or malformed | Plain "Browse all meeting minutes →" link to the Drive folder |
-| Nothing configured | "Minutes are available on request — email the board" |
-
-It never renders an error and never renders an empty list. If Google changes
-something, the page quietly degrades instead of breaking.
+An earlier version of this site pulled minutes from a public Google Drive folder via
+a published Sheet. That code is gone. If minutes ever leave PayHOA, it is in the git
+history (commit `64386dd` and earlier), but a single link to wherever they live is
+almost certainly the better answer.
 
 ### Deploying to GitHub Pages
 
