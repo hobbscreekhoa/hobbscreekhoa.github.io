@@ -27,6 +27,8 @@ maintains the site. It changes rarely enough not to be worth wiring up.
 
 ## For whoever maintains the site
 
+Colors, type and component rules are in [DESIGN.md](DESIGN.md).
+
 ### Minutes and other homeowner documents
 
 They live in PayHOA, behind a homeowner login, so the site cannot list them. Two
