@@ -44,7 +44,9 @@ object-position:50% 100%}
 .hrow{display:flex;align-items:center;justify-content:center;gap:48px}
 .hero h1{margin:0 0 10px;line-height:0;font-weight:400;flex:0 0 auto}
 .sign{display:block;width:350px;max-width:100%;height:auto;filter:drop-shadow(0 6px 10px rgba(30,58,47,.12))}
-.hero p{margin:0;max-width:56ch;color:var(--muted);font-size:clamp(16.5px,2.1vw,18.5px)}
+.hero p{margin:0;max-width:30em;color:var(--muted);font-size:clamp(17px,2.1vw,20.5px);line-height:1.6;text-wrap:balance}
+.hero br.wide{display:block}
+@media (max-width:860px){.hero br.wide{display:none}}
 @media (max-width:860px){
   .hrow{flex-direction:column;gap:22px;text-align:center}
   .hero h1{margin:0}
@@ -152,9 +154,8 @@ font-size:13.5px;color:var(--muted)}
     <text x="200" y="232" font-size="26" font-weight="700" textLength="198">HOBBS CREEK</text>
   </g>
 </svg></h1>
-  <p>Welcome to the HOA website for our beautiful neighborhood in Cedar Creek, Texas.
-     Its purpose is to assist neighbors both new and old, as well as anyone
-     who is interested in learning more about our community.</p>
+  <p>Welcome to the homeowners association website for our beautiful neighborhood in Cedar Creek, Texas.<br class="wide">
+     It's here to help neighbors new and old, and anyone curious about our community.</p>
 </div>
   <!-- Hero art slot. Swap this SVG for an <img> of the neighborhood when a good
        photo exists; the slot keeps its position and the copy will not move. -->
