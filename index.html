@@ -6,8 +6,6 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta name="description" content="Official site of The Homestead on Hobbs Creek Homeowners Association in Cedar Creek, Texas. Governing documents, board meetings, and resident resources.">
 <style>
-/* Palette: see DESIGN.md. Three families (green, creek blue, stone) plus cream.
-   Add a color here before using it anywhere else. */
 :root{--ink:#1E3A2F;--foliage:#3F6B46;--leaf-lt:#E7F0EA;
 --creek:#2E7FA8;--creek-lt:#E9F3F9;--creek-dk:#235F7E;--rule-creek:rgba(46,127,168,.16);
 --stone:#C9BA96;--stone-lt:#F5EFE1;--stone-d:#8A7448;
@@ -24,7 +22,6 @@ a{color:var(--ink)}
 .wrap{max-width:940px;margin:0 auto;padding:0 22px}
 a:focus-visible,.row:focus-visible{outline:3px solid var(--creek);outline-offset:3px;border-radius:8px}
 
-/* sticky nav */
 nav{position:sticky;top:0;z-index:30;background:rgba(233,243,249,.94);
 backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--rule-creek)}
 nav ul{display:flex;flex-wrap:wrap;gap:2px;list-style:none;margin:0;padding:0;
@@ -34,7 +31,6 @@ color:var(--muted);border-bottom:3px solid transparent;transition:color .15s,bor
 nav a:hover{color:var(--ink)}
 nav a[aria-current="true"]{color:var(--ink);border-bottom-color:var(--creek)}
 
-/* hero */
 .hero{position:relative;overflow:hidden;
 background:linear-gradient(175deg,var(--creek-lt) 0%,var(--cream) 100%);
 color:var(--ink);padding:44px 0 0;border-bottom:1px solid var(--rule)}
@@ -44,7 +40,6 @@ color:var(--ink);padding:44px 0 0;border-bottom:1px solid var(--rule)}
 mask-image:linear-gradient(90deg,transparent 0,#000 13%,#000 87%,transparent 100%)}
 .hero-art svg,.hero-art img{display:block;width:100%;height:58px;object-fit:cover;
 object-position:50% 100%}
-/* the entrance sign is the page title, with the welcome text beside it */
 .hrow{display:flex;align-items:center;justify-content:center;gap:48px}
 .hero h1{margin:0 0 10px;line-height:0;font-weight:400;flex:0 0 auto}
 .sign{display:block;width:350px;max-width:100%;height:auto;filter:drop-shadow(0 6px 10px rgba(30,58,47,.12))}
@@ -62,7 +57,6 @@ section{padding:52px 0 4px;scroll-margin-top:var(--hh)}
 h2{font-family:var(--serif);font-size:clamp(22px,3.2vw,29px);margin:0 0 6px;letter-spacing:-.01em}
 .lede{color:var(--muted);font-size:16px;margin:0 0 24px;max-width:62ch}
 
-/* link rows */
 .list{display:grid;gap:10px}
 @media (min-width:760px){.list.two{grid-template-columns:1fr 1fr}}
 .row{display:flex;align-items:center;gap:15px;background:var(--card);
@@ -72,8 +66,6 @@ min-height:72px;transition:border-color .15s,box-shadow .15s}
 .row:hover strong{color:var(--creek-dk);text-decoration-color:var(--creek)}
 .badge{flex:0 0 auto;width:44px;height:44px;border-radius:10px;display:grid;place-items:center}
 .badge svg{width:22px;height:22px;display:block}
-/* Badges are tinted by meaning, not by brand: stone = documents,
-   green = homeowner account and input, creek = contact and community. */
 .badge.pdf {background:var(--stone-lt);color:var(--stone-d)}
 .badge.prtl,.badge.gf{background:var(--leaf-lt);color:var(--foliage)}
 .badge.fb,.badge.mail{background:var(--creek-lt);color:var(--creek-dk)}
@@ -84,7 +76,6 @@ text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:rg
 .arw{flex:0 0 auto;width:20px;height:20px;color:var(--stone-d);opacity:.65}
 .row:hover .arw{opacity:1;color:var(--creek)}
 
-/* meetings */
 .panel{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:6px 24px 22px}
 .mgrid{display:grid;gap:30px}
 @media (min-width:760px){.mgrid{grid-template-columns:1fr 1fr;gap:40px}}
@@ -114,8 +105,6 @@ font-size:13.5px;color:var(--muted)}
 @media (max-width:640px){
   nav a{padding:12px 11px;font-size:14.5px}
   .hero{padding:34px 0 0}
-  /* Fixed tree height at every width: the SVG is cropped, not shrunk, so trees
-     stay the same size on a phone instead of turning into specks. */
   .hero-art{margin-top:8px;
   -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 9%,#000 91%,transparent 100%);
   mask-image:linear-gradient(90deg,transparent 0,#000 9%,#000 91%,transparent 100%)}
@@ -161,8 +150,6 @@ font-size:13.5px;color:var(--muted)}
   <p>Welcome to the homeowners association website for our beautiful neighborhood in Cedar Creek, Texas.<br class="wide">
      It's here to help neighbors new and old, and anyone curious about our community.</p>
 </div>
-  <!-- Hero art slot. Swap this SVG for an <img> of the neighborhood when a good
-       photo exists; the slot keeps its position and the copy will not move. -->
   <div class="hero-art"><svg class="grove" viewBox="0 0 1400 58" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false"><defs><g id="tp"><rect x="12.6" y="27" width="2.8" height="8" rx="1"/><path d="M14 2 L19.5 12 H16.5 L22 20 H17.5 L24.5 29 H3.5 L10.5 20 H6 L11.5 12 H8.5 Z"/></g><g id="to"><rect x="12.6" y="22" width="2.8" height="13" rx="1"/><circle cx="9" cy="16" r="7.2"/><circle cx="19" cy="16" r="7.2"/><circle cx="14" cy="10" r="8.4"/><rect x="7" y="13" width="14" height="7"/></g><g id="tc"><rect x="12.8" y="26" width="2.4" height="9" rx="1"/><path d="M14 1 C19.5 8 20.5 18 19 28 H9 C7.5 18 8.5 8 14 1 Z"/></g></defs><g fill="#E4EDE4"><use href="#tc" transform="translate(-30,27.4) scale(0.76)"/><use href="#to" transform="translate(11,22.0) scale(0.92)"/><use href="#tp" transform="translate(67,28.8) scale(0.72)"/><use href="#tc" transform="translate(131,25.5) scale(0.81)"/><use href="#to" transform="translate(175,21.3) scale(0.93)"/><use href="#to" transform="translate(228,24.9) scale(0.83)"/><use href="#tc" transform="translate(284,28.1) scale(0.74)"/><use href="#to" transform="translate(326,21.9) scale(0.92)"/><use href="#tp" transform="translate(385,23.9) scale(0.86)"/><use href="#tp" transform="translate(427,21.6) scale(0.93)"/><use href="#to" transform="translate(473,29.1) scale(0.71)"/><use href="#to" transform="translate(525,23.5) scale(0.87)"/><use href="#to" transform="translate(583,21.9) scale(0.92)"/><use href="#tp" transform="translate(642,24.7) scale(0.84)"/><use href="#tp" transform="translate(705,28.5) scale(0.73)"/><use href="#tc" transform="translate(756,27.2) scale(0.76)"/><use href="#to" transform="translate(807,24.3) scale(0.85)"/><use href="#tc" transform="translate(856,22.6) scale(0.90)"/><use href="#tc" transform="translate(904,24.6) scale(0.84)"/><use href="#tp" transform="translate(948,26.6) scale(0.78)"/><use href="#tc" transform="translate(1011,21.4) scale(0.93)"/><use href="#to" transform="translate(1068,23.7) scale(0.87)"/><use href="#tc" transform="translate(1134,22.0) scale(0.91)"/><use href="#tc" transform="translate(1174,24.1) scale(0.86)"/><use href="#to" transform="translate(1236,24.7) scale(0.84)"/><use href="#tc" transform="translate(1277,25.4) scale(0.82)"/><use href="#tp" transform="translate(1343,28.6) scale(0.73)"/><use href="#to" transform="translate(1393,28.1) scale(0.74)"/></g><g fill="#C3D6C6"><use href="#to" transform="translate(-30,30.9) scale(0.74)"/><use href="#tc" transform="translate(28,32.6) scale(0.70)"/><use href="#tp" transform="translate(79,29.9) scale(0.77)"/><use href="#tc" transform="translate(136,32.9) scale(0.69)"/><use href="#to" transform="translate(180,28.5) scale(0.81)"/><use href="#tc" transform="translate(229,29.8) scale(0.78)"/><use href="#tp" transform="translate(273,27.5) scale(0.84)"/><use href="#tp" transform="translate(310,29.0) scale(0.80)"/><use href="#tc" transform="translate(347,29.6) scale(0.78)"/><use href="#to" transform="translate(400,29.8) scale(0.78)"/><use href="#tc" transform="translate(447,28.3) scale(0.82)"/><use href="#tc" transform="translate(482,31.8) scale(0.72)"/><use href="#tc" transform="translate(540,31.3) scale(0.73)"/><use href="#tc" transform="translate(576,28.8) scale(0.80)"/><use href="#to" transform="translate(633,34.6) scale(0.64)"/><use href="#tc" transform="translate(681,28.2) scale(0.82)"/><use href="#to" transform="translate(723,27.8) scale(0.84)"/><use href="#to" transform="translate(771,34.7) scale(0.64)"/><use href="#tp" transform="translate(811,30.7) scale(0.75)"/><use href="#to" transform="translate(857,32.1) scale(0.71)"/><use href="#tc" transform="translate(892,32.7) scale(0.69)"/><use href="#tc" transform="translate(941,30.7) scale(0.75)"/><use href="#to" transform="translate(997,32.9) scale(0.69)"/><use href="#to" transform="translate(1054,32.4) scale(0.70)"/><use href="#to" transform="translate(1089,30.6) scale(0.76)"/><use href="#to" transform="translate(1131,34.4) scale(0.65)"/><use href="#to" transform="translate(1165,29.3) scale(0.79)"/><use href="#to" transform="translate(1214,29.4) scale(0.79)"/><use href="#tc" transform="translate(1254,29.3) scale(0.79)"/><use href="#tc" transform="translate(1311,34.6) scale(0.64)"/><use href="#to" transform="translate(1357,33.7) scale(0.67)"/><use href="#tc" transform="translate(1409,27.8) scale(0.84)"/></g><g fill="#8CAF95"><use href="#to" transform="translate(-30,7.6) scale(1.44)"/><use href="#tp" transform="translate(38,6.8) scale(1.46)"/><use href="#to" transform="translate(102,10.5) scale(1.36)"/><use href="#to" transform="translate(149,14.8) scale(1.23)"/><use href="#tp" transform="translate(218,4.1) scale(1.54)"/><use href="#tc" transform="translate(300,10.7) scale(1.35)"/><use href="#tp" transform="translate(365,3.6) scale(1.55)"/><use href="#to" transform="translate(428,12.9) scale(1.29)"/><use href="#tc" transform="translate(502,5.9) scale(1.49)"/><use href="#tc" transform="translate(568,12.5) scale(1.30)"/><use href="#tp" transform="translate(629,11.4) scale(1.33)"/><use href="#to" transform="translate(705,1.9) scale(1.60)"/><use href="#to" transform="translate(769,4.8) scale(1.52)"/><use href="#to" transform="translate(836,6.3) scale(1.48)"/><use href="#tp" transform="translate(912,3.5) scale(1.56)"/><use href="#tp" transform="translate(984,2.9) scale(1.57)"/><use href="#tp" transform="translate(1040,5.7) scale(1.49)"/><use href="#tc" transform="translate(1106,13.0) scale(1.29)"/><use href="#tc" transform="translate(1175,8.8) scale(1.41)"/><use href="#tc" transform="translate(1245,10.8) scale(1.35)"/><use href="#tc" transform="translate(1326,6.4) scale(1.47)"/><use href="#to" transform="translate(1406,12.4) scale(1.30)"/></g><g fill="#4A7452"><use href="#tp" transform="translate(-30,18.1) scale(1.14)"/><use href="#to" transform="translate(39,12.1) scale(1.31)"/><use href="#tc" transform="translate(95,14.5) scale(1.24)"/><use href="#tc" transform="translate(143,12.6) scale(1.30)"/><use href="#tp" transform="translate(182,19.6) scale(1.10)"/><use href="#tp" transform="translate(234,20.7) scale(1.07)"/><use href="#to" transform="translate(302,18.8) scale(1.12)"/><use href="#tp" transform="translate(361,15.3) scale(1.22)"/><use href="#to" transform="translate(404,15.7) scale(1.21)"/><use href="#tp" transform="translate(469,12.8) scale(1.29)"/><use href="#to" transform="translate(510,18.3) scale(1.13)"/><use href="#tp" transform="translate(552,14.7) scale(1.24)"/><use href="#tp" transform="translate(594,20.8) scale(1.06)"/><use href="#tc" transform="translate(635,18.8) scale(1.12)"/><use href="#to" transform="translate(674,15.8) scale(1.21)"/><use href="#to" transform="translate(740,12.7) scale(1.29)"/><use href="#tp" transform="translate(791,21.2) scale(1.05)"/><use href="#to" transform="translate(842,14.8) scale(1.23)"/><use href="#tp" transform="translate(907,19.8) scale(1.09)"/><use href="#tc" transform="translate(950,17.2) scale(1.17)"/><use href="#to" transform="translate(1001,16.3) scale(1.19)"/><use href="#tc" transform="translate(1056,12.3) scale(1.31)"/><use href="#tp" transform="translate(1109,20.4) scale(1.07)"/><use href="#tc" transform="translate(1170,14.2) scale(1.25)"/><use href="#tp" transform="translate(1235,13.8) scale(1.26)"/><use href="#to" transform="translate(1304,14.3) scale(1.25)"/><use href="#tc" transform="translate(1363,13.8) scale(1.26)"/><use href="#tp" transform="translate(1417,15.5) scale(1.21)"/></g></svg></div>
 </div>
 
@@ -218,9 +205,6 @@ font-size:13.5px;color:var(--muted)}
     <p class="lede">Homeowners are welcome to attend.</p>
     <div class="panel"><div class="mgrid">
       <div>
-        <!-- No fixed day is listed: the schedule is unconfirmed (September 2026 fell
-             on the second Monday, but nobody has said that repeats). Ask the board
-             before adding one. -->
         <h3>Meeting Schedule</h3>
         <p class="where">Dates, times, and places are posted in the Facebook group.</p>
         <div class="btns">
@@ -235,8 +219,6 @@ font-size:13.5px;color:var(--muted)}
         </div>
       </div>
     </div>
-    <!-- The address is the link text on purpose: on a computer a mailto link
-         may open nothing at all, so people need to see where to write. -->
     <p class="help">Trouble logging in to the portal? Email
       <a href="mailto:hoa.hohc@yahoo.com?subject=Homeowner%20portal%20access">hoa.hohc@yahoo.com</a></p>
     </div>
@@ -281,16 +263,11 @@ font-size:13.5px;color:var(--muted)}
     });
   }
 
-  // Which heading have we scrolled past? That matches what a reader feels.
-  // A pure "biggest visible area" test overshoots, because a tall section below
-  // outweighs the short one you just landed on.
   function current(){
     var line = window.scrollY + headerH() + 24;
     var id = 'top';
     targets.forEach(function(t){ if (t.el && t.el.offsetTop <= line) id = t.id; });
 
-    // The page can run out of scroll before the final sections reach the top,
-    // so at the very bottom fall through to the last section actually on screen.
     var atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
     if (atBottom) {
       var vh = window.innerHeight;
@@ -302,8 +279,6 @@ font-size:13.5px;color:var(--muted)}
     return id;
   }
 
-  // A click pins its own item. Scroll-position guessing would otherwise fight the
-  // user the moment the smooth scroll lands, so the pin holds until they scroll again.
   var pinned = false;
   links.forEach(function(a){
     a.addEventListener('click', function(){
